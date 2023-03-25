@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="wishlist.css" />
+    <link rel="shortcut icon" href="img/imdb_logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/dd2e06be8c.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/dd2e06be8c.js" crossorigin="anonymous"></script>
+
+    <title>Wishlist</title>
+</head>
+
+<body id="body">
+
+    <nav>
+        <div class="logo_ul">
+            <img src="/img/imdb_logo.png" alt="" width="90px" />
+
+            <ul>
+                <li>
+                    <a href="/" >Home</a>
+                    <a href="#" id="series">Series</a>
+                    <a href="#"id="movies">Movies</a>
+                    <a href="#">Kids</a>
+                </li>
+            </ul>
+        </div>
+        <div class="search_bar">
+            <!-- <input type="text" placeholder="Search IMDb" id="search_input" /> -->
+           
+            <img src="img/profilepic.jpg" alt="" />
+
+            <!-- <div class="search"> -->
+                <!-- <a href="" class="card">
+                    <img src="img/the boys.jpg" alt="" />
+                    <div class="cont">
+                        <h3>The Boys</h3>
+                        <p>
+                            Action,2021, <span>IMDB </span><i class="fa-sharp fa-regular fa-star"></i>9.6
+                        </p>
+                    </div>
+                </a> -->
+               
+            <!-- </div> -->
+        </div>
+    </nav>
+    
+    <h1>Wishlist:</h1>
+
+    
+        
+    <div class="container">
+        
+        <!-- <div class="cards">
+          <a href="#" class="movieCard">
+            <img src="img/the boys.jpg" alt="" class="poster" />
+              <div class="cont">
+                    <h4>The Boys</h4>
+                    <div class="subtitles">
+                        <p>Action,2022</p>
+                        <h3>
+                            <span>IMDB</span><i class="fa-sharp fa-regular fa-star"></i>9.6
+                        </h3>
+                    </div>
+                </div>
+            </a>
+        </div> -->
+        
+        
+   
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+// function to show movie on wish list page
+let wishlist_btn = document.getElementById('Watchlist');
+
+const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+wishlist.forEach(movieData => {
+
+let cards = document.createElement('div');
+cards.classList.add='cards'
+cards.innerHTML=`
+<div class="cards">
+  <a href="#" class="movieCard" data-movie-id="${movieData.id}">
+   
+    <img src="${movieData.poster}" alt="" class="poster" />
+    <button class="remove">X</button>
+    <i class="fa-regular fa-delete-right"></i>
+      <div class="cont">
+            <h5>${movieData.title}</h5>
+            <div class="subtitles">
+                <p>${movieData.genre}</p>
+                <h3>
+                    <span>IMDB</span><i class="fa-sharp fa-regular fa-star"></i>9.6
+                </h3>
+            </div>
+        </div>
+    </a>
+</div>
+
+`
+ // <i class="fa-solid fa-trash"></i>
+
+document.querySelector('.container').appendChild(cards);
+});
+
+
+
+//function to remove the movie from wishlist
+
+const removeButtons = document.querySelectorAll('.remove');
+
+
+
+
+// Add event listener to each remove button
+removeButtons.forEach(removeButton => {
+  removeButton.addEventListener('click', () => {
+   
+
+   // get the movie card and its id
+const movieCard = removeButton.parentNode;
+const movieId = movieCard.getAttribute('data-movie-id');
+
+// retrieve the movie list from local storage
+let movieList = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+// filter out the movie with the matching id
+movieList = movieList.filter(movie => movie.id !== movieId);
+
+// update the movie list in local storage
+localStorage.setItem('wishlist', JSON.stringify(movieList));
+
+// remove the movie card from the UI
+movieCard.remove();
+
+
+  });
+});
+
+
+
+    </script>
+
+</body>
+
+</html>

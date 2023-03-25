@@ -11,18 +11,20 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/dd2e06be8c.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="https://kit.fontawesome.com/dd2e06be8c.js" crossorigin="anonymous"></script>
 
     <title>IMDb</title>
 </head>
 
 <body>
-    <header>
+    <header class="header" >
         <video src="video/theboys.webm" autoplay muted></video>
 
         <nav>
             <div class="logo_ul">
                 <img src="/img/imdb_logo.png" alt="" width="90px" />
+                
 
                 <ul>
                     <li>
@@ -38,7 +40,7 @@
                 <div class="buttons">
                     <button>
                         <i class="fa-regular fa-bookmark"></i> &nbsp;
-                        <p>Watchlist</p>
+                        <p> <a id="Watchlist" href="wishlist.html">Watchlist</a></p>
                     </button>
                 </div>
                 <img src="img/profilepic.jpg" alt="" />
@@ -57,36 +59,33 @@
                 </div>
             </div>
         </nav>
-
-        <div class="content">
-            <h1 id="title">Money Heist</h1>
-            <p>
-                A criminal mastermind who goes by "The Professor" has a plan to pull
-                off the biggest heist in recorded history -- to print billions of
-                euros in the Royal Mint of Spain.
-            </p>
-
-            <div class="details">
-                <h6>A Netflix Orignal Series</h6>
-                <h5 id="gen">Thriller</h5>
-                <h4 id="date">2021</h4>
-                <h3 id="rate">
-                    <span>IMDB</span><i class="fa-sharp fa-regular fa-star"></i>9.6
-                </h3>
-            </div>
-
-            <div class="btns">
-                <a href="#" id="play">Pause <i class="fa-solid fa-pause"></i></a>
-                <a href="#" id="download_main">
-                    <svg width="26" height="26" fill="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z">
-                        </path>
-                        <path
-                            d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z">
-                        </path>
-                    </svg></a>
+        
+        <div id="movieInfo">
+            <div class="content" id="showinfo">
+                <h1 id="title">The Boys</h1>
+               
+                <p>
+                    A criminal mastermind who goes by "The Professor" has a plan to pull
+                    off the biggest heist in recorded history -- to print billions of
+                    euros in the Royal Mint of Spain.
+                </p>
+    
+                <div class="details">
+                    <h6>A Netflix Orignal Series</h6>
+                    <h5 id="gen">Thriller</h5>
+                    <h4 id="date">2021</h4>
+                    <h3 id="rate">
+                        <span>IMDB</span><i class="fa-sharp fa-regular fa-star"></i>9.6
+                    </h3>
+                </div>
+    
+                <div class="btns">
+                   
+                <a href="#"  download="The Boys 480p"    id="low_q">480p</a>
+                <a href="#"  download="The Boys 720p"   id="medium_q">720p</a>
+                <a href="#"  download="The Boys 1080p"   id="high_q">1080p</a>
+     
+                </div>
             </div>
         </div>
 

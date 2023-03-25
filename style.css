@@ -32,7 +32,7 @@ header::before{
  position: absolute;
  width:100%;
  height:100%;
- background: url('img/money\ heist1.jpg')no-repeat center center/cover;
+ background:url('img/the boys1.jpg')no-repeat center center/cover;
  opacity: 0.6;
  z-index: -1;
 
@@ -50,7 +50,7 @@ header::after{
    header video {
     position:absolute;
     width:120%;
-    height:198%;
+    height:210%;
     top:-49%;
     z-index: -1;
    }
@@ -119,7 +119,7 @@ header::after{
     
    }
    .search_bar img{
-    margin:10px;
+    margin-bottom: 14px;
     width:40px;
     height:40px;
     border-radius: 50%;
@@ -240,7 +240,7 @@ header nav .search_bar .search .card{
    header .content h1{
     font-size: 50px;
    } 
-   header .content p{
+   header .content p {
     font-size: 11px;
     width: 350px;
     word-break: break-all;
@@ -352,7 +352,7 @@ scroll-behavior: smooth;
 header section .cards::-webkit-scrollbar{
 display: none;
 }
-header section .cards .card{
+header section .cards .movieCard{
 position: relative;
 min-width: 130px;
 height: 180px;
@@ -362,18 +362,18 @@ border-radius: 8px;
 background: #000;
 transition: .3s linear;
 }
-header section .cards .card .poster{
+header section .cards .movieCard .poster{
     width: 100%;
     height: 100%;
     border-radius: 8px;
     position: relative;
 }
-header section .cards .card:hover{
+header section .cards .movieCard:hover{
     min-width:300px;
      overflow: hidden;
 }
 
-header section .cards .card .rest_card{
+header section .cards .movieCard .rest_card{
     position: absolute;
     width: 100%;
     height:100%;
@@ -384,7 +384,7 @@ header section .cards .card .rest_card{
     opacity: 0;
     transition: 1s linear;
 }
-header section .cards .card .rest_card img{
+header section .cards .movieCard .rest_card img{
     position: absolute;
     width: 100%;
     height:100%;
@@ -393,7 +393,19 @@ header section .cards .card .rest_card img{
     z-index: -1;
    
 }
-header section .cards .card .rest_card::after{
+header section .cards .movieCard .rest_card .heart{
+    background: none;
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+    float: right;
+    border: none;
+}
+header section .cards .movieCard .rest_card .heart:hover{
+    opacity: 0.5;
+}
+
+header section .cards .movieCard .rest_card::after{
     content: '';
     position: absolute;
     width:100%;
@@ -403,7 +415,7 @@ header section .cards .card .rest_card::after{
     bottom: 0;
     z-index: -1;
    }
-   header section .cards .card .rest_card .cont{
+   header section .cards .movieCard .rest_card .cont{
 
    position: absolute;
    width: 100%;
@@ -412,27 +424,27 @@ header section .cards .card .rest_card::after{
    padding: 0px 20px;
    
    }
-   header section .cards .card .rest_card .cont .subtitles{
+   header section .cards .movieCard .rest_card .cont .subtitles{
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
    }
-   header section .cards .card .rest_card .cont .subtitles p{
+   header section .cards .movieCard .rest_card .cont .subtitles p{
 font-size: 12px;
 font-weight: 400;
 color: rgb(255,255,255,.7);
 
    }
-   header section .cards .card .rest_card .cont .subtitles h3{
+   header section .cards .movieCard .rest_card .cont .subtitles h3{
 color: #fff;
 font-size: 12px;
 display: flex;
 align-items: center;
    }
 
-   header section .cards .card .rest_card .cont .subtitles h3 span{
+   header section .cards .movieCard .rest_card .cont .subtitles h3 span{
     background: yellow;
     color: #000;
     padding: 0px 3px;
@@ -441,15 +453,15 @@ align-items: center;
     border-radius: 2px;
    }
 
-   header section .cards .card .rest_card .cont .subtitles h3 i{
+   header section .cards .movieCard .rest_card .cont .subtitles h3 i{
    margin-right: 3px;
    }
 
-   header section .cards .card .rest_card .cont .subtitles h3 i{
+   header section .cards .movieCard .rest_card .cont .subtitles h3 i{
    margin-right: 3px;
    }
 
-   header section .cards .card:hover .rest_card {
+   header section .cards .movieCard:hover .rest_card {
    opacity: 1;
    }
 
@@ -538,6 +550,7 @@ align-items: center;
     header nav .search_bar .search .card .cont {
         margin-left: 6px;
         color: white;
+        cursor: pointer;
     }
     nav .search_bar .search .card {
         position: relative;
@@ -546,6 +559,7 @@ align-items: center;
         display: flex;
         align-items: center;
         flex-direction: row;
+        cursor: pointer;
         margin-bottom: 5px;
         padding: 0px 0px;
         background: rgb(255,255,255,.1);
@@ -558,6 +572,7 @@ align-items: center;
         height: 270px;
         /* border: 1px solid white; */
         right: 4px;
+        cursor: pointer;
         top: 100px;
         z-index: 99999;
         overflow-y: auto;
@@ -613,5 +628,13 @@ header section .fa-chevron-left, .fa-chevron-right {
     background-color: transparent;
     transition: .3s linear;
 }
-}
 
+
+}
+#Watchlist{
+    color: white;
+    text-decoration: none;
+}
+a{
+    cursor: pointer;
+}
