@@ -13,7 +13,7 @@ Vanilla JS
 
 To install and run the project on your local machine, follow these steps:
 
-**Clone the repository**: git clone https://github.com/Prajjwaldabas/Imdb-Clone.github.io.git
+**Clone the repository**: https://github.com/Prajjwaldabas/IMDB-Clone.git
 
 **Navigate to the project directory**: cd imdb-clone
 Open the index.html file in your web browser.
